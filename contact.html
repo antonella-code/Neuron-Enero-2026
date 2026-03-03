@@ -7,22 +7,28 @@
     <title>Neuron - Contact</title>
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script defer src="js/index.js"></script>
 </head>
 
 <body>
     <!--Header-->
-    <header class="Header">
-        <img class="Header__image" src="media/logo-black.svg" alt="">
-        <nav class="Header__menu">
+    <header class="header">
+        <a href="#" class="header__logo" aria-label="Neuron-Home">
+        <img class="header__image" src="media/logo-black.svg" alt="">
+        </a>
+        <nav id="menuNav" class="header__menu">
             <ul>
-                <li class="Header__link"> <a href="index.html">Home</a></li>
-                <li class="Header__link"> <a href="services.html">Services</a></li>
-                <li class="Header__link"> <a href="about-us.html">About us</a></li>
-                <li class="Header__link"> <a href="news.html">News</a></li>
-                <li class="Header__link"> <a href="#price">Price</a></li>
-                <li class="Header__link"> <a href="#">Contact</a></li>
+                <li class="header__link"> <a href="index.html">Home</a></li>
+                <li class="header__link"> <a href="services.html">Services</a></li>
+                <li class="header__link"> <a href="about-us.html">About us</a></li>
+                <li class="header__link"> <a href="news.html">News</a></li>
+                <li class="header__link"> <a href="#price">Price</a></li>
+                <li class="header__link"> <a href="#">Contact</a></li>
+                <li><button onclick="toggleMenu()" class="header__menu-toggle" aria-label="Toggle-navigation-menu"><span class="material-symbols-outlined" aria-hidden="true">close</span></button></li>
             </ul>
-            <span class="material-symbols-outlined">menu</span>
+            <button onclick="toggleMenu()" class="header__menu-toggle" aria-label="Toggle-navigation-menu">
+                <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+            </button>
         </nav>
     </header>
     <!-- / Header-->

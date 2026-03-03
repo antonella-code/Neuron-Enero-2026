@@ -34,6 +34,18 @@ input {
     outline: none;
 }
 
+button {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 /* / Reset CSS */
 
 /* Components */
@@ -82,8 +94,6 @@ input[type="submit"] {
     display: flex;
     align-items: center;
     gap: 1rem;
-
-
 }
 
 
@@ -109,7 +119,6 @@ h3,
 h4,
 .h4 {
     font: 500 clamp(1.0625rem, 5vh, 1.1875rem) var(--font-text);
-    color: var(--color-text);
 }
 
 p,
@@ -138,21 +147,34 @@ a,
 
 /*Components - text ---END*/
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 /* hero header*/
-.Header {
+.header {
     padding: clamp(1rem, 5vw, 2rem);
     display: flex;
     justify-content: space-between;
     max-width: var(--max-width-xl);
     margin: 0 auto;
+
+    & button {
+        display: none;
+
+        @media (max-width: 45rem) {
+            display: block;
+        }
+    }
+
 }
 
-.Header__image {
+.header__image {
     max-width: 5.75rem;
 }
 
 
-.Header__menu ul {
+.header__menu ul {
     list-style: none;
     display: flex;
     gap: 2rem;
@@ -163,7 +185,7 @@ a,
 }
 
 
-.Header__link a {
+.header__link a {
     display: flex;
     color: var(--color-text);
     opacity: 50%;
@@ -198,6 +220,10 @@ a,
     gap: 1rem;
     padding: .625rem;
     align-items: start;
+
+    & h2 {
+        color: var(--color-light)
+    }
 }
 
 .Hero-banner__block h1,
@@ -282,7 +308,7 @@ a,
 
     @media (max-width:45rem) {
         flex-direction: column;
-        align-items: flex-start; 
+        align-items: flex-start;
         gap: 0.5rem;
     }
 }
@@ -400,7 +426,10 @@ a,
     flex: 1 1 18.75rem;
     gap: 2rem;
 
-    & #name, #surname, #email, select {
+    & #name,
+    #surname,
+    #email,
+    select {
         border: 1px solid transparent;
 
         &:focus {
@@ -524,13 +553,13 @@ footer {
 
 
 @media (min-width: 45rem) {
-    .Header__menu span {
+    .header__menu span {
         display: none;
     }
 }
 
 @media (max-width: 45rem) {
-    .Header__menu ul {
+    .header__menu ul {
         display: none;
     }
 }
@@ -580,4 +609,35 @@ footer {
     & h1 {
         color: var(--color-light);
     }
+}
+
+@media (max-width:45rem) {
+    .header__menu ul {
+        display: none;
+    }
+
+    .header__menu.active ul {
+        display: flex;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        background-color: var(--color-light);
+        top: 0;
+        left: 0;
+        padding: 2rem;
+        gap: 2rem;
+        justify-content: center;
+
+        & li a {
+            font: 400 clamp(1.5rem, 5vw, 2rem) var(--font-titles);
+        }
+
+        & .header__menu-toggle {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+        }
+    }
+
 }

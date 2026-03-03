@@ -7,22 +7,28 @@
     <title>Neuron - News</title>
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script defer src="js/index.js"></script>
 </head>
 
 <body>
     <!--Header-->
-    <header class="Header">
-        <img class="Header__image" src="media/logo-black.svg" alt="">
-        <nav class="Header__menu">
+    <header class="header">
+        <a href="#" class="header__logo" aria-label="Neuron-Home">
+        <img class="header__image" src="media/logo-black.svg" alt="">
+        </a>
+        <nav id="menuNav" class="header__menu">
             <ul>
-                <li class="Header__link"> <a href="index.html">Home</a></li>
-                <li class="Header__link"> <a href="services.html">Services</a></li>
-                <li class="Header__link"> <a href="about-us.html">About us</a></li>
-                <li class="Header__link"> <a href="#">News</a></li>
-                <li class="Header__link"> <a href="#price">Price</a></li>
-                <li class="Header__link"> <a href="contact.html">Contact</a></li>
+                <li class="header__link"> <a href="index.html">Home</a></li>
+                <li class="header__link"> <a href="services.html">Services</a></li>
+                <li class="header__link"> <a href="about-us.html">About us</a></li>
+                <li class="header__link"> <a href="#">News</a></li>
+                <li class="header__link"> <a href="#price">Price</a></li>
+                <li class="header__link"> <a href="contact.html">Contact</a></li>
+                <li><button onclick="toggleMenu()" class="header__menu-toggle" aria-label="Toggle-navigation-menu"><span class="material-symbols-outlined" aria-hidden="true">close</span></button></li>
             </ul>
-            <span class="material-symbols-outlined">menu</span>
+            <button onclick="toggleMenu()" class="header__menu-toggle" aria-label="Toggle-navigation-menu">
+                <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+            </button>
         </nav>
     </header>
     <!-- / Header-->
@@ -64,13 +70,15 @@
                 <div class="latest-post__card">
                     <img src="media/News-4.webp" alt="">
                     <h4>Data-Driven Decisions: Leveraging Analytics in Your Company</h4>
-                    <p>Transform your business with data-driven insights that guide smarter decision-making. See how adopting analytics...</p>
+                    <p>Transform your business with data-driven insights that guide smarter decision-making. See how
+                        adopting analytics...</p>
                     <a class="latest-post__btn" href="#">Read more</a>
                 </div>
                 <div class="latest-post__card">
                     <img src="media/News-5.webp" alt="">
                     <h4>Cybersecurity Essentials Every Business Should Know</h4>
-                    <p>Protecting your digital assets is critical in a connected world. Uncover the most important cybersecurity practices...</p>
+                    <p>Protecting your digital assets is critical in a connected world. Uncover the most important
+                        cybersecurity practices...</p>
                     <a class="latest-post__btn" href="#">Read more</a>
                 </div>
                 <div class="latest-post__card">
@@ -88,13 +96,15 @@
                 <div class="latest-post__card">
                     <img src="media/News-8.webp" alt="">
                     <h4>Customer Experience in the Digital Age: Best Practices to Stand Out</h4>
-                    <p>Digital tools allow you to personalize and enhance customer interactions. Learn how to deliver outstanding...</p>
+                    <p>Digital tools allow you to personalize and enhance customer interactions. Learn how to deliver
+                        outstanding...</p>
                     <a class="latest-post__btn" href="#">Read more</a>
                 </div>
                 <div class="latest-post__card">
                     <img src="media/News-9.webp" alt="">
                     <h4>Overcoming the Challenges of Digital Adoption in Traditional...</h4>
-                    <p>Adopting new technologies can be daunting for established industries. Explore practical solutions for managing resistance...</p>
+                    <p>Adopting new technologies can be daunting for established industries. Explore practical solutions
+                        for managing resistance...</p>
                     <a class="latest-post__btn" href="#">Read more</a>
                 </div>
             </div>
@@ -103,7 +113,7 @@
     <!-- / Posts-->
 
     <!--Prices-->
-    <section  id="price" class="section prices">
+    <section id="price" class="section prices">
         <div class="container prices__block">
             <div class="prices__card">
                 <div class="prices__heading">
